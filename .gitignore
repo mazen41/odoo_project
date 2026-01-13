@@ -1,0 +1,101 @@
+#######################################
+# Python
+#######################################
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+#######################################
+# Odoo runtime files
+#######################################
+*.log
+*.pid
+*.lock
+odoo.log
+odoo.pid
+
+#######################################
+# Odoo generated files
+#######################################
+*.mo
+*.pot
+*.po~
+*.db
+*.rdb
+
+#######################################
+# Odoo filestore (VERY IMPORTANT)
+#######################################
+# Never commit filestore
+odoo/filestore/
+filestore/
+
+#######################################
+# Database
+#######################################
+*.sqlite
+*.sqlite3
+*.dump
+*.sql
+
+#######################################
+# IDEs & Editors
+#######################################
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+#######################################
+# OS files
+#######################################
+.DS_Store
+Thumbs.db
+
+#######################################
+# Node / frontend (if used)
+#######################################
+node_modules/
+dist/
+build/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#######################################
+# Tests & coverage
+#######################################
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+#######################################
+# Odoo local config
+#######################################
+odoo.conf
+*.conf
+
+#######################################
+# Backups
+#######################################
+*.bak
+*.swp
+*.tmp
+*.old
+
+#######################################
+# Docker (if used)
+#######################################
+.docker/
+docker-data/
