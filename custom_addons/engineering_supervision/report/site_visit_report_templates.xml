@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_site_visit_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Site Visit Report</h2>
+                        <p><strong>Report Number:</strong> <span t-field="doc.name"/></p>
+                        <hr/>
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Project:</strong> <span t-field="doc.project_id.name"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Visit Date:</strong> <span t-field="doc.visit_date" t-options='{"widget": "date"}'/>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <strong>Attendees:</strong>
+                                <ul>
+                                    <li t-foreach="doc.attendees_ids" t-as="attendee">
+                                        <span t-esc="attendee.name"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3>Observations</h3>
+                        <div t-field="doc.observations"/>
+
+                        <div t-if="doc.image" class="mt-4">
+                            <h3>Site Photo</h3>
+                            <img t-att-src="image_data_uri(doc.image)" style="max-width: 600px;"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

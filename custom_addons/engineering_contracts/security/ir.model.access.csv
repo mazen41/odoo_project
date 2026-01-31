@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_engineering_contracts_engineering_contracts,engineering_contracts.engineering_contracts,model_engineering_contracts_engineering_contracts,base.group_user,1,1,1,1

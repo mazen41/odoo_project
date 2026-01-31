@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form_inherited_contract" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.contract</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_print_contract"
+                        string="Print Contract"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="state not in ['sale', 'done']"/>
+                
+                <!-- NEW WHATSAPP BUTTON -->
+                <button name="action_send_contract_whatsapp"
+                        string="Send via WhatsApp"
+                        type="object"
+                        class="btn-success"
+                        invisible="state not in ['sale', 'done']"/>
+            </xpath>
+
+            <!-- This is just to ensure the custom fields are visible, if you have any -->
+            <xpath expr="//notebook/page[@name='customer_signature']" position="after">
+                <page string="Client Details" name="client_details">
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="partner_id.mobile"/> <!-- Display customer's mobile -->
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

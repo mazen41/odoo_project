@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_project_view_form_inherited_supervision" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.supervision</field>
+        <field name="model">project.project</field>
+        <!-- CORRECTED LINE: The ID is view_project_project_form -->
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Supervision Billing" name="supervision_billing">
+                    <group>
+                        <group>
+                            <field name="supervision_end_date"/>
+                            <field name="extra_month_cost"/>
+                        </group>
+                        <group>
+                            <field name="last_extra_invoice_date"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo> 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add a new menu item under the main Project menu -->
+    <menuitem id="menu_site_visit_report"
+              name="Site Visit Reports"
+              parent="project.menu_project_report"
+              action="action_site_visit_report"
+              sequence="10"/>
+</odoo>

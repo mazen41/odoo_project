@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="site_visit_report_view_form" model="ir.ui.view">
+        <field name="name">site.visit.report.form</field>
+        <field name="model">site.visit.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- Buttons can go here later -->
+                </header>
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <field name="project_id"/>
+                        <field name="visit_date"/>
+                        <field name="attendees_ids" widget="many2many_tags"/>
+                    </group>
+                    <h2>Observations</h2>
+                    <field name="observations" placeholder="Describe findings, progress, and any issues..."/>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree (List) View -->
+    <record id="site_visit_report_view_tree" model="ir.ui.view">
+        <field name="name">site.visit.report.tree</field>
+        <field name="model">site.visit.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="visit_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open the views -->
+    <record id="action_site_visit_report" model="ir.actions.act_window">
+        <field name="name">Site Visit Reports</field>
+        <field name="res_model">site.visit.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

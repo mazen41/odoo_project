@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Template for 'Architectural Design' Stage -->
+        <record id="task_template_prepare_sketch" model="project.task">
+            <field name="name">Prepare Sketch (Assigned to Architect)</field>
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- Templates for 'Contract & Down Payment' Stage -->
+        <record id="task_template_prepare_contract" model="project.task">
+            <field name="name">Prepare Contract (Admin)</field>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="task_template_follow_payment" model="project.task">
+            <field name="name">Follow First Payment (Accountant)</field>
+            <field name="active" eval="False"/>
+        </record>
+        
+        <record id="task_template_request_docs" model="project.task">
+            <field name="name">Request Owner Documents (Engineer)</field>
+            <field name="active" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

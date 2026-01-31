@@ -1,2 +1,2 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_engineering_crm_engineering_crm,engineering_crm.engineering_crm,model_engineering_crm_engineering_crm,base.group_user,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_delete
+access_crm_lead_engineering,access.crm.lead.engineering,model_crm_lead,base.group_user,1,1,1,1

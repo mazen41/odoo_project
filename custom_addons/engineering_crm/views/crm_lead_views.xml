@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="crm_lead_view_form_inherited_engineering" model="ir.ui.view">
-            <field name="name">crm.lead.form.inherit.engineering</field>
-            <field name="model">crm.lead</field>
-            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//notebook" position="inside">
-                    <page string="Engineering Info" name="engineering_info">
-                        <group>
-                            <group string="Project Details">
-                                <field name="building_type"/>
-                                <field name="service_type"/>
-                            </group>
-                            <group string="Location Details">
-                                <field name="site_info" placeholder="Enter detailed address and site notes..."/>
-                            </group>
+    <record id="crm_lead_view_form_inherited_engineering" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.engineering</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- I changed the xpath to be more stable, adding our page before the 'internal_notes' page -->
+            <xpath expr="//notebook/page[@name='internal_notes']" position="before">
+                <page string="Engineering Info" name="engineering_info">
+                    <group>
+                        <group string="Project Classification">
+                            <field name="building_type"/>
+                            <field name="license_type"/>
                         </group>
-                    </page>
-                </xpath>
-            </field>
-        </record>
-
-    </data>
+                        <group string="Site Data">
+                            <field name="site_land_area"/>
+                            <field name="site_plot_number"/>
+                            <!-- We can reuse the standard 'street' and 'city' fields for the address -->
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
 </odoo>
